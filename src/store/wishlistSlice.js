@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getWishlist, toggleWishlist as apiToggle } from '../api/axiosConfig';
-import axios from 'axios';
 
 // Fetch initial wishlist from backend
 export const fetchWishlist = createAsyncThunk('wishlist/fetch', async () => {

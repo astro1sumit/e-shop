@@ -26,8 +26,7 @@ const ProductListPage = ({ categoryType }) => {
       const matchesSize = filters.sizes.length === 0 || (p.size && filters.sizes.some(s => p.size.includes(s)));
       return matchesCategory && matchesPrice && matchesColor && matchesSize;
     });
-  }, [categoryType, filters, currentCategoryId]);
-
+  }, [filters, currentCategoryId]);
   const categoryData = content.categories.find(c => c.id === currentCategoryId);
 
   return (

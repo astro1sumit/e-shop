@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 
 const SizeFilter = ({sizes, hidleTitle, multi=true, onChange}) => {
 
