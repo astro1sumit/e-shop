@@ -1,0 +1,17 @@
+.active-link{
+    font-weight: bold;
+    color: black;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between; /* Keeps logo left, nav center, auth right */
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.nav-auth {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-left: auto; /* Pushes the auth section to the far right */
+}
