@@ -7,8 +7,6 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-reac
 import './Navigation.css';
 
 const Navigation = () => {
-  const cartItems = useSelector((state) => state.cart.cartItems || []);
-  const cartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const { items } = useSelector((state) => state.wishlist);

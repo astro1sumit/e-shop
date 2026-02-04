@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductCard = ({ id, title, price, thumbnail, brand, slug }) => {
+const ProductCard = () => {
   return (
     <div className='flex flex-col hover:scale-105 relative border rounded-lg p-2 shadow-sm transition-transform'>
       <div className="overflow-hidden">
