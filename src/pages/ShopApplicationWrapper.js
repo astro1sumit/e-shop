@@ -6,6 +6,7 @@ import Navigation from '../components/Navigation/Navigation';
 import { fetchWishlist } from '../store/wishlistSlice';
 import { setAuthToken } from '../api/axiosConfig';
 
+
 const ShopApplicationWrapper = () => {
   const dispatch = useDispatch();
   const { getToken, isSignedIn, isLoaded } = useAuth();

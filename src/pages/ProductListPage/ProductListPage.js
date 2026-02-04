@@ -32,21 +32,21 @@ const ProductListPage = ({ categoryType }) => {
   return (
     <div style={{ backgroundColor: '#fff', minHeight: '100vh', fontFamily: 'Arial, sans-serif' }}>
       <div style={{ display: 'flex', padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
-        
+
         {/* SIDEBAR FILTERS */}
         <aside style={{ width: '260px', borderRight: '1px solid #eee', paddingRight: '20px' }}>
           <h3 style={{ marginBottom: '20px' }}>Filter</h3>
-          
+
           <PriceFilter onChange={(val) => setFilters(prev => ({ ...prev, priceRange: val }))} />
-          
-          <ColorsFilter 
-            colors={categoryData?.meta_data?.colors || []} 
-            onChange={(val) => setFilters(prev => ({ ...prev, colors: val }))} 
+
+          <ColorsFilter
+            colors={categoryData?.meta_data?.colors || []}
+            onChange={(val) => setFilters(prev => ({ ...prev, colors: val }))}
           />
-          
-          <SizeFilter 
-            sizes={categoryData?.meta_data?.sizes || []} 
-            onChange={(val) => setFilters(prev => ({ ...prev, sizes: val }))} 
+
+          <SizeFilter
+            sizes={categoryData?.meta_data?.sizes || []}
+            onChange={(val) => setFilters(prev => ({ ...prev, sizes: val }))}
           />
         </aside>
 
@@ -54,11 +54,16 @@ const ProductListPage = ({ categoryType }) => {
         <main style={{ flex: 1, paddingLeft: '30px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
             <h2 style={{ margin: 0, textTransform: 'capitalize' }}>
-                {categoryType} Clothing
+              {categoryType} Clothing
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '25px' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', // 2 columns on mobile, more on desktop
+            gap: '15px',
+            padding: '10px'
+          }}>
             {filteredProducts.map(p => (
               <Link to={`/product/${p.id}`} key={p.id} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div style={{ position: 'relative' }}>

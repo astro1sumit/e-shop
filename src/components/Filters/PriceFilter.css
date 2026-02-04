@@ -1,10 +1,34 @@
 .custom-range-slider {
-    .range-slider__thumb {
-        height:18px;
-        width:18px;
-        background: black;
+    padding: 12px 8px; /* Increased for better touch targets */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.custom-range-slider .range-slider__thumb {
+    height: 24px; /* Larger for better touch control on mobile */
+    width: 24px;
+    min-width: 24px; /* Prevents shrinking */
+    background: black;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    cursor: pointer;
+    touch-action: none; /* Prevents browser interference on touch */
+}
+
+.custom-range-slider .range-slider__range {
+    background: black;
+    height: 4px; /* Thicker for visibility */
+}
+
+/* Mobile touch optimizations */
+@media (max-width: 768px) {
+    .custom-range-slider .range-slider__thumb {
+        height: 28px;
+        width: 28px;
     }
-    .range-slider__range{
-        background: black;
+    
+    .custom-range-slider {
+        padding: 15px 0; /* More vertical padding for easier sliding */
     }
 }

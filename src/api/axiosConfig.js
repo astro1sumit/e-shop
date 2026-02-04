@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = "http://e-shop-server-production.up.railway.app";
-
-// 1. Define the API Instance FIRST
+const API_BASE_URL = "https://demo-deployment-latest-i5xg.onrender.com/api";// 1. Define the API Instance FIRST
 const api = axios.create({
     baseURL: API_BASE_URL,
     headers: {

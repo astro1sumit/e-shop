@@ -44,7 +44,11 @@ const ProductCard = ({ id, title, price, thumbnail, brand, slug }) => {
     <div className='flex flex-col hover:scale-105 relative border rounded-lg p-2 shadow-sm transition-transform'>
       {/* Product Image Link */}
       <Link to={`/product/${slug}`}>
-        <img className='h-[320px] w-[280px] rounded-lg cursor-pointer object-cover block' src={thumbnail} alt={title} />
+        <img
+          className='h-48 md:h-[320px] w-full rounded-lg cursor-pointer object-cover block'
+          src={thumbnail}
+          alt={title}
+        />
       </Link>
 
       {/* Product Details */}

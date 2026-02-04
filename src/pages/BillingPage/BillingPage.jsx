@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import API from '../../api/axiosConfig';
 import './BillingPage.css';
 
+
 const BillingPage = () => {
   const { cartItems, totalAmount } = useSelector((state) => state.cart);
   const [address, setAddress] = useState({
@@ -10,7 +11,8 @@ const BillingPage = () => {
     email: '',
     address: '',
     city: '',
-    zipCode: ''
+    zipCode: '',
+    order_id: ''
   });
 
   const handleInput = (e) => setAddress({ ...address, [e.target.name]: e.target.value });
@@ -105,7 +107,7 @@ const BillingPage = () => {
       <h2 className="text-3xl font-extrabold mb-10 text-gray-900">Checkout</h2>
       <div className="w-full max-w-2xl bg-white p-10 rounded-xl shadow-lg border">
         <h3 className="text-xl font-bold mb-6">1. Delivery Address</h3>
-        <div className="grid grid-cols-1 gap-5 mb-10">
+        <div className="border border-gray-300 p-4 rounded-lg outline-none focus:ring-2 focus:ring-black text-base w-full">
           <input name="fullName" placeholder="Full Name" className="border border-gray-300 p-4 rounded-lg outline-none focus:ring-2 focus:ring-black" onChange={handleInput} required />
           <input name="email" type="email" placeholder="Email Address" className="border border-gray-300 p-4 rounded-lg outline-none focus:ring-2 focus:ring-black" onChange={handleInput} required />
           <input name="address" placeholder="Street Address / Building No." className="border border-gray-300 p-4 rounded-lg outline-none focus:ring-2 focus:ring-black" onChange={handleInput} required />
