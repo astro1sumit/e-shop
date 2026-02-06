@@ -8,7 +8,7 @@ import { store } from './store/store'; //
 import { ClerkProvider } from '@clerk/clerk-react';
 
 // ⚠️ REPLACE THIS WITH YOUR ACTUAL KEY FROM CLERK DASHBOARD
-const PUBLISHABLE_KEY = "pk_test_ZW5qb3llZC1hbGJhY29yZS02Mi5jbGVyay5hY2NvdW50cy5kZXYk"; 
+const PUBLISHABLE_KEY = "pk_test_ZW5qb3llZC1hbGJhY29yZS02Mi5jbGVyay5hY2NvdW50cy5kZXYk";
 
 if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");

@@ -53,5 +53,7 @@ export const router = createBrowserRouter([
         element: <WishlistPage />
       },
     ]
-  },
+  },{
+    basename: "localhost:3000"
+  }
 ]);
