@@ -10,6 +10,7 @@ const Navigation = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
   const { items } = useSelector((state) => state.wishlist);
+  const {cartItems} = useSelector((state) => state.cart);
 
   const handleSearch = (e) => {
     if (e.key === 'Enter' && searchTerm.trim()) {
@@ -64,9 +65,9 @@ const Navigation = () => {
           </Link>
           <Link to="/cart-items" className="relative">
             <CartIcon />
-            {items.length > 0 && (
+            {cartItems.length > 0 && (
               <span className="absolute -top-1 -right-2 bg-red-600 text-white text-[10px] rounded-full h-4 w-4 flex items-center justify-center">
-                {items.length}
+                {cartItems.length}
               </span>
             )}
           </Link>

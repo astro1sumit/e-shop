@@ -1,14 +1,16 @@
 import axios from 'axios';
 
-const API_BASE_URL ='https://demo-deployment-latest-i5xg.onrender.com/api'; // Ensure this matches your .env variable
-const api = axios.create({
+// Pulls the backend URL from your .env file
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://demo-deployment-latest-i5xg.onrender.com/api'; 
+
+const api = axios.create({ 
     baseURL: API_BASE_URL,
     headers: {
         "Content-Type": "application/json",
     },
 });
 
-// 2. Helper to set Auth Token
+// Helper to set Auth Token
 export const setAuthToken = (token) => {
     if (token) {
         api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
@@ -17,7 +19,7 @@ export const setAuthToken = (token) => {
     }
 };
 
-// 3. Export API Functions (Now 'api' is defined and safe to use)
+// Export API Functions
 export const createPaymentOrder = (orderData) => api.post('/payment/create-order', orderData);
 export const updatePaymentStatus = (data) => api.post('/payment/update-status', data);
 export const createOrder = (orderData) => api.post('/orders/create', orderData);
